@@ -28,22 +28,12 @@ function updateCart() {
         sum += item.price;
 
         cartItems.innerHTML += `
-            <li>
-                ${item.name} - $${item.price}
-            </li>
-        `;
-    });
-
-    total.innerText = "$" + sum;
-}
-function toggleCart() {
-    const panel = document.getElementById("cart-panel");
-
-    if (panel.style.right === "0px") {
-        panel.style.right = "-400px";
-    } else {
-        panel.style.right = "0px";
-    }
-
-    console.log("Cart clicked!");
+            cartItems.innerHTML += `
+    <li style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span>${item.name} - $${item.price}</span>
+        <button onclick="removeItem(${cart.indexOf(item)})">❌</button>
+    </li>
+`;function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
 }
