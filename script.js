@@ -1,10 +1,18 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price) {
-    cart.push({
-        name: name,
-        price: price
-    });
+
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
 
     updateCart();
 }
@@ -14,18 +22,19 @@ function updateCart() {
     const cartItems = document.getElementById("cart-items");
     const total = document.getElementById("cart-total");
 
-    cartCount.innerText = cart.length;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+cartCount.innerText = totalItems;
 
     cartItems.innerHTML = "";
 
     let sum = 0;
 
     cart.forEach((item, index) => {
-        sum += item.price;
+        sum += item.price * item.quantity;
 
         cartItems.innerHTML += `
             <li style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <span>${item.name} - $${item.price}</span>
+                <span>${item.name} x${item.quantity} - $${item.price * item.quantity}</span>
                 <button onclick="removeItem(${index})">❌</button>
             </li>
         `;
@@ -35,7 +44,12 @@ function updateCart() {
 localStorage.setItem("cart", JSON.stringify(cart));}
 
 function removeItem(index) {
-    cart.splice(index, 1);
+    if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+    } else {
+        cart.splice(index, 1);
+    }
+
     updateCart();
 }
 
