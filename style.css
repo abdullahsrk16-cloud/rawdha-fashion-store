@@ -1,1 +1,69 @@
-body {}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    background: #000;
+    padding: 15px 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: gold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #000, #333);
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: gold;
+}
+
+.hero button {
+    padding: 12px 30px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.products {
+    padding: 50px;
+    text-align: center;
+}
+
+.product-card {
+    background: #222;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+}
