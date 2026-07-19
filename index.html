@@ -8,46 +8,91 @@
 </head>
 <body>
 
-<header>
+<header class="header">
+    <div class="logo">🛍️ Rawdha Fashion</div>
+
     <nav>
-        <h2>Rawdha Fashion Store</h2>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Contact</a>
     </nav>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search products...">
+        <button>🔍</button>
+    </div>
 </header>
 
 <section class="hero">
-    <h1>Luxury Fashion Collection</h1>
-    <p>Discover the latest trends with elegance and style.</p>
-    <button>Shop Now</button>
+    <div class="hero-content">
+        <h1>Luxury Fashion Collection</h1>
+        <p>Discover premium fashion at the best prices.</p>
+
+        <button class="shop-btn">Shop Now</button>
+    </div>
+</section>
+
+<section class="categories">
+
+<h2>Shop By Category</h2>
+
+<div class="category-container">
+
+<div class="card">
+<h3>👗 Dresses</h3>
+</div>
+
+<div class="card">
+<h3>👜 Bags</h3>
+</div>
+
+<div class="card">
+<h3>👠 Shoes</h3>
+</div>
+
+<div class="card">
+<h3>⌚ Accessories</h3>
+</div>
+
+</div>
+
 </section>
 
 <section class="products">
-    <h2>Featured Products</h2>
 
-    <div class="product-card">
-        <h3>Elegant Dress</h3>
-        <p>$59.99</p>
-    </div>
+<h2>Featured Products</h2>
 
-    <div class="product-card">
-        <h3>Premium Handbag</h3>
-        <p>$89.99</p>
-    </div>
+<div class="product-grid">
 
-    <div class="product-card">
-        <h3>Classic Shoes</h3>
-        <p>$69.99</p>
-    </div>
+<div class="product">
+<img src="https://via.placeholder.com/250x300" alt="Product">
+<h3>Elegant Dress</h3>
+<p><del>$120</del> <strong>$89</strong></p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250x300" alt="Product">
+<h3>Luxury Handbag</h3>
+<p><del>$90</del> <strong>$65</strong></p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250x300" alt="Product">
+<h3>Premium Shoes</h3>
+<p><del>$150</del> <strong>$110</strong></p>
+<button>Add to Cart</button>
+</div>
+
+</div>
 
 </section>
 
 <footer>
-    <p>© 2026 Rawdha Fashion Store. All Rights Reserved.</p>
+<p>© 2026 Rawdha Fashion Store | All Rights Reserved</p>
 </footer>
 
 <script src="script.js"></script>
