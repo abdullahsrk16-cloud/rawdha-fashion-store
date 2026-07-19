@@ -36,7 +36,6 @@ function updateCart() {
 
     total.innerText = "$" + sum;
 }
-
 function toggleCart() {
     const panel = document.getElementById("cart-panel");
 
@@ -45,4 +44,6 @@ function toggleCart() {
     } else {
         panel.style.right = "0px";
     }
+
+    console.log("Cart clicked!");
 }
