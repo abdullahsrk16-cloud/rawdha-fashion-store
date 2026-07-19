@@ -7,8 +7,6 @@ function addToCart(name, price) {
     });
 
     updateCart();
-
-    alert(name + " added to cart!");
 }
 
 function updateCart() {
@@ -16,9 +14,8 @@ function updateCart() {
     const cartItems = document.getElementById("cart-items");
     const total = document.getElementById("cart-total");
 
-    if (!cartCount || !cartItems || !total) return;
-
     cartCount.innerText = cart.length;
+
     cartItems.innerHTML = "";
 
     let sum = 0;
@@ -27,7 +24,7 @@ function updateCart() {
         sum += item.price;
 
         cartItems.innerHTML += `
-            <li style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <li style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
                 <span>${item.name} - $${item.price}</span>
                 <button onclick="removeItem(${index})">❌</button>
             </li>
@@ -51,18 +48,13 @@ function toggleCart() {
         panel.style.right = "0px";
     }
 }
-function checkout(){
 
-    if(cart.length===0){
+function checkout() {
+    if (cart.length === 0) {
         alert("Your cart is empty!");
-        return;
+    } else {
+        alert("✅ Thank you for your purchase!");
+        cart = [];
+        updateCart();
     }
-
-    alert("Order placed successfully! 🎉");
-
-    cart=[];
-
-    updateCart();
-
-    toggleCart();
 }
