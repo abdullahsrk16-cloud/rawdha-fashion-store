@@ -51,3 +51,18 @@ function toggleCart() {
         panel.style.right = "0px";
     }
 }
+function checkout(){
+
+    if(cart.length===0){
+        alert("Your cart is empty!");
+        return;
+    }
+
+    alert("Order placed successfully! 🎉");
+
+    cart=[];
+
+    updateCart();
+
+    toggleCart();
+}
