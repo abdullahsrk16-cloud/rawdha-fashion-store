@@ -32,7 +32,7 @@ function updateCart() {
     });
 
     total.innerText = "$" + sum;
-}
+localStorage.setItem("cart", JSON.stringify(cart));}
 
 function removeItem(index) {
     cart.splice(index, 1);
@@ -58,3 +58,4 @@ function checkout() {
         updateCart();
     }
 }
+updateCart();
