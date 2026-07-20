@@ -88,8 +88,19 @@ function checkout() {
 
 updateCart();
 function searchProducts() {
-    
+
     const input = document.getElementById("search").value.toLowerCase();
+
+    const hero = document.querySelector(".hero");
+    const categories = document.querySelector(".categories");
+
+    if (input === "") {
+        hero.style.display = "";
+        categories.style.display = "";
+    } else {
+        hero.style.display = "none";
+        categories.style.display = "none";
+    }
 
     const products = document.querySelectorAll(".product");
 
@@ -104,5 +115,7 @@ function searchProducts() {
         }
 
     });
+
+}
 
 }
