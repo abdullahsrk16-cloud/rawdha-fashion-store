@@ -33,11 +33,32 @@ cartCount.innerText = totalItems;
         sum += item.price * item.quantity;
 
         cartItems.innerHTML += `
-            <li style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <span>${item.name} x${item.quantity} - $${item.price * item.quantity}</span>
-                <button onclick="removeItem(${index})">❌</button>
-            </li>
-        `;
+<li style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+
+    <span>${item.name}</span>
+
+    <div style="display:flex;align-items:center;gap:8px;">
+        <button onclick="changeQuantity(${index}, -1)">-</button>
+        <span>${item.quantity}</span>
+        <button onclick="changeQuantity(${index}, 1)">+</button>
+    </div>
+
+    <span>$${item.price * item.quantity}</span>
+
+    <button onclick="removeItem(${index})">❌</button>
+
+</li>
+`;
+    function changeQuantity(index, change) {
+
+    cart[index].quantity += change;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
+}    
     });
 
     total.innerText = "$" + sum;
