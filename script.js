@@ -1,7 +1,6 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price) {
-
     const existingItem = cart.find(item => item.name === name);
 
     if (existingItem) {
@@ -22,8 +21,7 @@ function updateCart() {
     const cartItems = document.getElementById("cart-items");
     const total = document.getElementById("cart-total");
 
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-cartCount.innerText = totalItems;
+    cartCount.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
 
     cartItems.innerHTML = "";
 
@@ -33,24 +31,27 @@ cartCount.innerText = totalItems;
         sum += item.price * item.quantity;
 
         cartItems.innerHTML += `
-<li style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <li style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <span>${item.name}</span>
 
-    <span>${item.name}</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+                <button onclick="changeQuantity(${index}, -1)">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="changeQuantity(${index}, 1)">+</button>
+            </div>
 
-    <div style="display:flex;align-items:center;gap:8px;">
-        <button onclick="changeQuantity(${index}, -1)">-</button>
-        <span>${item.quantity}</span>
-        <button onclick="changeQuantity(${index}, 1)">+</button>
-    </div>
+            <span>$${item.price * item.quantity}</span>
 
-    <span>$${item.price * item.quantity}</span>
+            <button onclick="removeItem(${index})">❌</button>
+        </li>
+        `;
+    });
 
-    <button onclick="removeItem(${index})">❌</button>
+    total.innerText = "$" + sum;
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-</li>
-`;
-    function changeQuantity(index, change) {
-
+function changeQuantity(index, change) {
     cart[index].quantity += change;
 
     if (cart[index].quantity <= 0) {
@@ -58,19 +59,10 @@ cartCount.innerText = totalItems;
     }
 
     updateCart();
-}    
-    });
-
-    total.innerText = "$" + sum;
-localStorage.setItem("cart", JSON.stringify(cart));}
+}
 
 function removeItem(index) {
-    if (cart[index].quantity > 1) {
-        cart[index].quantity--;
-    } else {
-        cart.splice(index, 1);
-    }
-
+    cart.splice(index, 1);
     updateCart();
 }
 
@@ -93,4 +85,5 @@ function checkout() {
         updateCart();
     }
 }
+
 updateCart();
