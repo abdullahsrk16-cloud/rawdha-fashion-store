@@ -98,7 +98,7 @@ function searchProducts() {
         const name = product.querySelector("h3").innerText.toLowerCase();
 
         if (name.includes(input)) {
-            product.style.display = "block";
+            product.style.display = "";
         } else {
             product.style.display = "none";
         }
