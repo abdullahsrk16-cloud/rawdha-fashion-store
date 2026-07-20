@@ -88,7 +88,7 @@ function checkout() {
 
 updateCart();
 function searchProducts() {
-    alert("Search function is working!");
+    
     const input = document.getElementById("search").value.toLowerCase();
 
     const products = document.querySelectorAll(".product");
