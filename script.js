@@ -118,7 +118,7 @@ function searchProducts() {
 
 }
 
-}
+
 // ===== Product Page =====
 
 function changeImage(image) {
@@ -139,4 +139,17 @@ function changeQty(change) {
 }
 function addWishlist() {
     alert("❤️ Product added to Wishlist!");
+}
+function placeOrder() {
+
+    alert("🎉 Order Placed Successfully!");
+
+    localStorage.removeItem("cart");
+
+    cart = [];
+
+    updateCart();
+
+    window.location.href = "index.html";
+
 }
