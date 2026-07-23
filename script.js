@@ -137,3 +137,6 @@ function changeQty(change) {
 
     document.getElementById("qty").innerText = quantity;
 }
+function addWishlist() {
+    alert("❤️ Product added to Wishlist!");
+}
