@@ -64,47 +64,56 @@
 
     <div class="product-grid">
 
-        <a href="product.html?id=1" style="text-decoration:none;color:inherit;">
-    <div class="product-card product">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
-        <h3>Premium T-Shirt</h3>
-        <p class="price">$29</p>
+    <!-- Premium T-Shirt -->
+    <a href="product.html?id=1" style="text-decoration:none;color:inherit;">
+        <div class="product-card product">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
+            <h3>Premium T-Shirt</h3>
+            <p class="price">$29</p>
 
-        <button onclick="event.preventDefault(); addToCart('Premium T-Shirt', 29)">
-            Add to Cart
-        </button>
-    </div>
-</a>
+            <button onclick="event.preventDefault(); addToCart('Premium T-Shirt',29)">
+                Add to Cart
+            </button>
+        </div>
+    </a>
 
+    <!-- Running Shoes -->
+    <a href="product.html?id=2" style="text-decoration:none;color:inherit;">
         <div class="product-card product">
             <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
             <h3>Running Shoes</h3>
             <p class="price">$89</p>
-            <button onclick="addToCart('Running Shoes', 89)">Add to Cart</button>
-        </div>
 
+            <button onclick="event.preventDefault(); addToCart('Running Shoes',89)">
+                Add to Cart
+            </button>
+        </div>
+    </a>
+
+    <!-- Luxury Handbag -->
+    <a href="product.html?id=3" style="text-decoration:none;color:inherit;">
         <div class="product-card product">
             <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500" alt="Bag">
             <h3>Luxury Handbag</h3>
             <p class="price">$120</p>
-            <button onclick="addToCart('Luxury Handbag', 120)">Add to Cart</button>
-        </div>
 
+            <button onclick="event.preventDefault(); addToCart('Luxury Handbag',120)">
+                Add to Cart
+            </button>
+        </div>
+    </a>
+
+    <!-- Elegant Dress -->
+    <a href="product.html?id=4" style="text-decoration:none;color:inherit;">
         <div class="product-card product">
             <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500" alt="Dress">
             <h3>Elegant Dress</h3>
             <p class="price">$99</p>
-            <button onclick="addToCart('Elegant Dress', 99)">Add to Cart</button>
+
+            <button onclick="event.preventDefault(); addToCart('Elegant Dress',99)">
+                Add to Cart
+            </button>
         </div>
+    </a>
 
-    </div>
-</section>
-
-<footer class="footer">
-    <h3>Rawdha Fashion Store</h3>
-    <p>© 2026 All Rights Reserved.</p>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
-
+</div>
