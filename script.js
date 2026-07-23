@@ -119,3 +119,21 @@ function searchProducts() {
 }
 
 }
+// ===== Product Page =====
+
+function changeImage(image) {
+    document.getElementById("mainImage").src = image;
+}
+
+let quantity = 1;
+
+function changeQty(change) {
+
+    quantity += change;
+
+    if (quantity < 1) {
+        quantity = 1;
+    }
+
+    document.getElementById("qty").innerText = quantity;
+}
