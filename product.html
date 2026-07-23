@@ -3,54 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Details</title>
+<title>Premium T-Shirt | Rawdha Fashion</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
-    <h1>Rawdha Fashion</h1>
+
+<div class="logo">Rawdha Fashion</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Shop</a>
+<a href="#">Contact</a>
+
+<div class="cart-icon" onclick="toggleCart()">
+🛒 Cart (<span id="cart-count">0</span>)
+</div>
+
+</nav>
+
 </header>
 
-<div class="product-page">
 
-    <div class="product-image">
-        <img id="mainImage"
-        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700"
-        width="450">
-    </div>
+<section class="product-page">
 
-    <div class="product-info">
+<div class="gallery">
 
-        <h1>Premium T-Shirt</h1>
+<img id="mainImage"
+src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900"
+class="main-image">
 
-        <h2>$29</h2>
+<div class="thumbnails">
 
-        <p>
-            Premium cotton T-Shirt with luxury comfort.
-        </p>
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300"
+onclick="changeImage(this.src)">
 
-        <h3>Size</h3>
+<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=300"
+onclick="changeImage(this.src)">
 
-        <button>S</button>
-        <button>M</button>
-        <button>L</button>
-        <button>XL</button>
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300"
+onclick="changeImage(this.src)">
 
-        <br><br>
-
-        <button onclick="addToCart('Premium T-Shirt',29)">
-            Add To Cart
-        </button>
-
-        <button>
-            Buy Now
-        </button>
-
-    </div>
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300"
+onclick="changeImage(this.src)">
 
 </div>
+
+</div>
+
+
+<div class="product-info">
+
+<h1>Premium T-Shirt</h1>
+
+<div class="rating">
+⭐⭐⭐⭐⭐ (4.9)
+</div>
+
+<h2>$29</h2>
+
+<p>
+Premium Cotton T-Shirt made with soft breathable fabric.
+Perfect for everyday fashion.
+</p>
+
+<h3>Choose Size</h3>
+
+<div class="sizes">
+
+<button>S</button>
+<button>M</button>
+<button>L</button>
+<button>XL</button>
+
+</div>
+
+<h3>Quantity</h3>
+
+<div class="qty">
+
+<button onclick="changeQty(-1)">−</button>
+
+<span id="qty">1</span>
+
+<button onclick="changeQty(1)">+</button>
+
+</div>
+
+<br>
+
+<button onclick="addToCart('Premium T-Shirt',29)"
+class="cart-btn">
+
+🛒 Add To Cart
+
+</button>
+
+<button class="buy-btn">
+
+⚡ Buy Now
+
+</button>
+
+<h3>Description</h3>
+
+<p>
+
+✔ Premium Cotton<br>
+✔ Soft Fabric<br>
+✔ Modern Fit<br>
+✔ Free Shipping<br>
+✔ Easy Returns
+
+</p>
+
+</div>
+
+</section>
 
 <script src="script.js"></script>
 
